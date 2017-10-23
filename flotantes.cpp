@@ -12,6 +12,10 @@ int main(){
 	
 	ifstream infile;
 	infile.open("cadenas.txt");
+	if (!infile) {
+        cout << "Unable to open file";
+        exit(1); // terminate with error
+    }
 
 	while(infile >> word){
 		count++;
@@ -26,7 +30,6 @@ int main(){
 	for(int i=0; i<count; i++)
     {
       infile >>  number[i]; // Reading from the file
-      printf("%lf\n",number[i]);
     }
 
 	infile.close();
